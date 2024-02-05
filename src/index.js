@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import "./styles/_nav.scss";
+import "./styles/_logo.scss";
+import "./styles/_header.scss";
+
+
+
+
 import reportWebVitals from './reportWebVitals';
+import AppRouter from './router/AppRouter';
+import { useActionData } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppRouter />
   </React.StrictMode>
 );
 
