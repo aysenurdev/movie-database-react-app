@@ -4,57 +4,57 @@ import { getMovieById } from "../utilities/api";
 import { filterVideos, formatReleaseDate } from "../utilities/toolbelt";
 import FavoriteButton from "../components/FavoriteButton";
 
-function PageSingleMovie(){
+function PageSingleMovie() {
     const params = useParams();
     const id = params.id;
     const [movieData, setMovieData] = useState();
     const [movieVideos, setMovieVideos] = useState([]);
 
-    useEffect (() =>{
+    useEffect(() => {
         getMovieById(id)
-        .then ((data) =>{
-            //could clean up and filter the videos first, to throw away everything thats not a Youtube Trailer?
-            const youtubeTrailerVideos = filterVideos(data.videos.results);
-            setMovieData(data);
-            setMovieVideos (youtubeTrailerVideos);
-        })
-
-        .catch((error) =>{
-            alert(error);
-        });
-
-    },[id]);
-
-    console.log(movieData);
+            .then((data) => {
+                const youtubeTrailerVideos = filterVideos(data.videos.results);
+                setMovieData(data);
+                setMovieVideos(youtubeTrailerVideos);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, [id]);
 
     return (
-        <div className="movie-page">
+        <div className="single-movie-page">
             {movieData && (
                 <>
-                <h1>{movieData.title}</h1>
-                <div>
-                    <h2>{formatReleaseDate(movieData.release_date)}</h2>
-                    <FavoriteButton movieData={movieData} />
-                </div>
-                <p>{movieData.overview}</p>
-                <div className="movie-videos">
-
-                    {movieVideos.length > 0 && (
-                        <iframe
-                        width="640"
-                        height="480"
-                        title={movieVideos[0].name}
-                        src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-
-                        ></iframe>
-
-                    )}
-                </div>
+                    <div className="single-movie-header">
+                        <h1>{movieData.title}</h1>
+                        <div className="single-movie-details">
+                            <p>{formatReleaseDate(movieData.release_date)}</p>
+                            <FavoriteButton movieData={movieData} />
+                        </div>
+                    </div>
+                    <div className="single-movie-content">
+                        <div className="single-poster">
+                            <img className="backside"   src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`} alt={movieData.title} />
+                            <img  className="poster-front"   src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`} alt={movieData.title} />
+                        </div>
+                        <div className="single-movie-info">
+                            <p>{movieData.overview}</p>
+                            {movieVideos.length > 0 && (
+                                <iframe
+                                    width="640"
+                                    height="480"
+                                    title={movieVideos[0].name}
+                                    src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                                ></iframe>
+                            )}
+                        </div>
+                    </div>
                 </>
-            ) }
-            {/* //could add a loading spinner here, to display while movieData is falsey */}
+            )}
+           
         </div>
     );
-   }
+}
 
-   export default PageSingleMovie;
+export default PageSingleMovie;

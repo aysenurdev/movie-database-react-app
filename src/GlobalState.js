@@ -15,19 +15,12 @@ const initialState = {
   },
 };
 
-// createContext returns an object with a Provider and Consumer
-// initialState must be declared to prevent errors on first render
 
 const GlobalContext = createContext(initialState);
 
 // Provider Component
 
 const GlobalProvider = (props) => {
-  // useReducer returns an array with the current state, and a dispatch function
-  // the dispatch function allows us to change state
-  // each function, are "actions"
-  // the type is the name of the action
-  // the payload is the data that is being passed to the reducer
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
 

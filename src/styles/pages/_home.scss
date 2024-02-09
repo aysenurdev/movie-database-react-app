@@ -3,16 +3,32 @@
     
 }
 .active-section button {
-    font-family: math;
-    background: black;
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    background: none; /* Remove background color */
+    border: none; /* Remove border */
+    font-size: 1.5rem;
+  
     color: #ffffff;
-    cursor: w-resize;
-    padding: 10px;
-    margin: 15px;
     cursor: pointer;
+    padding: 0; /* Remove padding */
+    margin: 15px;
+    text-decoration: none; /* Remove underline by default */
+    border-bottom: 2px solid transparent; /* Add transparent bottom border */
 }
-.active-section button:hover{
+
+.active-section button:hover {
     color: #EF1515;
+
+    border-bottom-color: #EF1515; /* Change bottom border color on hover */
+}
+.active-section button:visited {
+    color: #EF1515;
+
+    border-bottom-color: #EF1515;
+}
+
+.active-section button:focus {
+    color: #EF1515;
+ 
+    border-bottom-color: #EF1515;
 }

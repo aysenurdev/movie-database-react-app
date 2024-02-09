@@ -25,7 +25,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     if (!query) {
-      // No need to proceed if the query is empty
+     
       setMovies([]);
       setRecommendedMovies([]);
       return;
@@ -49,7 +49,7 @@ const SearchPage = () => {
             setMovies(searchResults);
 
             if (recommendedMovies.length > 0) {
-              // Update state for recommended movies
+            
               setRecommendedMovies(recommendedMovies);
             } else {
               console.warn("No recommended movies found.");
@@ -63,8 +63,8 @@ const SearchPage = () => {
         })
         .catch((error) => {
           console.error("Error fetching movies:", error);
-          setMovies([]); // Handle error by setting an empty array
-          setRecommendedMovies([]); // Also set recommended movies to an empty array
+          setMovies([]); 
+          setRecommendedMovies([]); 
         });
     }, 500);
 

@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 function formatReleaseDate(date) {
-    //convert a string that looks like:
-    //2023-11-22 and makes it look like:
-    //November 22, 2023
+   
 
     const dateObject = new Date(date);
     const options = {
@@ -15,8 +13,7 @@ function formatReleaseDate(date) {
 }
 
 function filterVideos(videoDataArray) {
-    //site : "Youtube"
-    //type : "Trailer"
+  
 
     return videoDataArray.filter((videoData) => {
         return videoData.site === "YouTube" && videoData.type ==="Trailer";
@@ -60,7 +57,7 @@ const sanitizeVideoData = (videos) => {
   };
   
   const generateRandomIndex = (arrayLength) => {
-    // generate a random number between 0 and the total length of the array
+ 
     const index = Math.floor(Math.random() * arrayLength);
     return index;
   };

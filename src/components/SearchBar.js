@@ -26,7 +26,7 @@ function SearchBar() {
 
   useEffect(() => {
     if (!query) {
-      return; // No need to proceed if the query is empty
+      return; 
     }
   
     const timeoutId = setTimeout(() => {
@@ -35,7 +35,7 @@ function SearchBar() {
     }, 500);
   
     return () => {
-      clearTimeout(timeoutId); // Clear the timeout when the component unmounts or when the query changes
+      clearTimeout(timeoutId); 
     };
   }, [query, navigate]);
   

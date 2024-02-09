@@ -5,10 +5,7 @@ import {
   } from "./utilities/constants";
   
   const AppReducer = (state, action) => {
-    // the action is an object with a type and a payload
-    // the state is the present state before action is applied
-    // the state is created in the GlobalState.js file
-    // via the GlobalProvider useReducer hook
+
   
     const saveToLocalStorage = (localStorageItem, data) => {
       localStorage.setItem(localStorageItem, JSON.stringify(data));

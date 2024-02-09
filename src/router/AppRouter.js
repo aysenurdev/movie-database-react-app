@@ -19,7 +19,6 @@ import {
 const AppRouter = () => {
   return ( 
   <BrowserRouter>
-{/* //Header components */}
   <GlobalProvider>
     <Header />
 <Routes>
@@ -28,12 +27,10 @@ const AppRouter = () => {
    < Route path="/about" element={<About/>}/>
    < Route path="/favorites" element={<Favorites/>}/>
    < Route path="/search/:query" element={<SearchPage/>}/>
-
-  
 </Routes>
 <Footer />
 </GlobalProvider>
-{/* //Footer components */}
+
   </BrowserRouter>
   
   );

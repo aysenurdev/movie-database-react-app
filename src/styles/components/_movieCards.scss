@@ -27,11 +27,15 @@
   &:hover {
     .movie-card-image {
       transform: scale(1.1);
+   
      
     }
 
     .movie-details {
       transform: translateY(0);
+      height: 100%
+      
+
     }
 
     .favorite-button {

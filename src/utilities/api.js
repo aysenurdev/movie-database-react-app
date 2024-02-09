@@ -193,7 +193,7 @@ function getVideos(movieId) {
 
 
 function getHeroMovies() {
-    const timestamp = Date.now(); // Unique timestamp for cache-busting
+    const timestamp = Date.now(); 
     return fetch(`${API_ENDPOINT}/movie/now_playing?timestamp=${timestamp}`, {
         headers: {
             accept: 'application/json',

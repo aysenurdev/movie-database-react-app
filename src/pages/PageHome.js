@@ -111,19 +111,19 @@ const PageHome = () => {
 
 
        {activeSection === 'popular' && (
-        <MoviesContainer title="Popular Movies" moviesData={popularMovies} />
+        <MoviesContainer moviesData={popularMovies} />
       )}
 
       {activeSection === 'nowPlaying' && (
-        <MoviesContainer title="Now Playing" moviesData={nowPlayingMovies} />
+        <MoviesContainer moviesData={nowPlayingMovies} />
       )}
 
       {activeSection === 'topRated' && (
-        <MoviesContainer title="Top Rated" moviesData={topRatedMovies} />
+        <MoviesContainer  moviesData={topRatedMovies} />
       )}
 
       {activeSection=== 'upcoming' && (
-        <MoviesContainer title="Upcoming" moviesData={upcomingMovies}  />
+        <MoviesContainer moviesData={upcomingMovies}  />
       )}
       {activeSection === 'recommended' && (
         <MoviesContainer title="Recommended Movies" moviesData={recommendedMovies} />

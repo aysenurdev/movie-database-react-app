@@ -9,11 +9,10 @@ import "./styles/components/_footer.scss";
 import "./styles/components/_hero-card.scss";
 import "./styles/components/_more-info.scss";
 import "./styles/components/_search-bar.scss";
-import "./styles/components/_slick.scss";
 import "./styles/pages/_about-page.scss";
 import "./styles/pages/_movie-page.scss";
 import "./styles/pages/_search-page.scss";
-import "./styles/components/_slick.scss";
+import "./styles/pages/_movie-page.scss";
 import "./styles/components/_movieCards.scss";
 import "./styles/components/_movies-container.scss";
 import "./styles/pages/_home.scss";
@@ -32,7 +31,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
