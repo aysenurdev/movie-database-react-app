@@ -27,8 +27,8 @@ const Header = () => {
     <header className={headerClass} id="header">
       <div className="header-wrapper">
         <Logo />
-        <SearchBar />
         <Nav />
+        <SearchBar />
       </div>
     </header>
   );

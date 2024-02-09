@@ -1,54 +1,36 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from 'react';
 
-//create the context
 export const GlobalContext = createContext();
 
-//create the provider component
-export function GlobalProvider ({children}) {
-  //helper function to load from local storage
+export function GlobalProvider({ children }) {
   function loadFromLocalStorage() {
-    const localData = localStorage.getItem("favorites");
+    const localData = localStorage.getItem('favorites');
     return localData ? JSON.parse(localData) : [];
   }
 
-//initial state
-const [favorites, setFavorites] = useState(loadFromLocalStorage());
+  const [favorites, setFavorites] = useState(loadFromLocalStorage);
 
-//helper funtion to add a favorite
+  function addToFavorites(favorite) {
+    const newFavorites = [...favorites, favorite];
+    setFavorites(newFavorites);
+  }
 
-function addToFavorites (favorite){
-  const newFavorites = [...favorites, favorite];
-  setFavorites(newFavorites);
+  function removeFromFavorites(favorite) {
+    const newFavorites = favorites.filter((fav) => fav.id !== favorite.id);
+    setFavorites(newFavorites);
+  }
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  return (
+    <GlobalContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+      {children}
+    </GlobalContext.Provider>
+  );
 }
 
-//helper function to remove a favorite
-
-function removeFromFavorites(favorite) {
-  const newFavorites = favorites.filter((fav) => {
-    return fav.id !== favorite.id;
-  });
-  setFavorites(newFavorites);
-}
-
-//use Effect that will run everytime something changes in the favorites state 
-
-useEffect(() =>{
-  //this code  will rerun everytime the state of favorites changes
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-},[favorites]);
-
-return (
-  <GlobalContext.Provider
-  value={{
-    favorites: favorites,
-    addToFavorites:addToFavorites,
-    removeFromFavorites: removeFromFavorites,
-  }}
-  >
-    {children}
-  </GlobalContext.Provider>
-);
-}
 
 
 

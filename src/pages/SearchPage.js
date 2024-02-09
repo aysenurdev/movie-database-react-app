@@ -75,14 +75,14 @@ const SearchPage = () => {
     <main>
       <section className="search-results-section">
         <div className="search-text-container">
-          <h2 className="searchHeading">Search results for:</h2>
+          
           <h1 className="searchQuery">{formatQuery(query)}</h1>
         </div>
         <MoviesContainer title="Search Results" moviesData={movies} />
       </section>
       <section className="recommended-section">
         <h2>Recommendations based on {movies[0]?.original_title}</h2>
-        <MoviesContainer title="Recommended Movies" moviesData={recommendedMovies} />
+        <MoviesContainer  moviesData={recommendedMovies} />
       </section>
     </main>
   );

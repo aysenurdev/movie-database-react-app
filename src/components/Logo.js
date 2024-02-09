@@ -11,8 +11,7 @@ const Logo = () => {
 
         <Link to="/" className="logo">
         <img src={logoImage} alt="CineDB Logo"/>
-        
-      <h1>CineDB</h1>
+        CineDB
       </Link>
  
   )

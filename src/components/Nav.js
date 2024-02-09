@@ -53,8 +53,8 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link className="focus-link" to="/favourites">
-              Favourites
+            <Link className="focus-link" to="/favorites">
+              Favorites
             </Link>
           </li>
           <li>

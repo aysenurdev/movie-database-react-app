@@ -1,0 +1,9 @@
+@use "../abstract/variables" as *;
+@use "../base/typography" as *;
+
+body {
+  background: $background-color;
+  color: $font-color-primary;
+  margin-top: 90px;
+  font-family: ui-monospace;
+}

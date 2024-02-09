@@ -1,0 +1,99 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+main.about-page {
+  color: white;
+  h2,
+  h3 {
+    margin: 0;
+  }
+  .main-heading {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .future-text {
+    & * {
+      display: inline-block;
+    }
+
+    .future-of {
+      position: relative;
+    }
+
+    .future-of::after {
+      content: "(searching for)";
+      position: absolute;
+      top: -25px;
+      right: -60px;
+      font-size: 1rem;
+      transform: rotate(10deg);
+    }
+    .future-today {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "v";
+        top: -10px;
+        left: -5px;
+        transform: rotate(10deg);
+        font-size: 1rem;
+      }
+    }
+  }
+  p,
+  ul {
+    font-family: CircularStdMedium;
+    list-style-type: none;
+    padding: 0;
+    li {
+      font-size: 1.2rem;
+    }
+  }
+  .emoji {
+    font-size: 1.4rem;
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #7fc6cc;
+    &:hover {
+      color: $primary-color;
+    }
+    .social-icon {
+      margin-left: 0.2rem;
+    }
+  }
+
+  @include mqMin(850px) {
+    & {
+      display: flex;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.1fr 1fr;
+      justify-content: center;
+      max-width: 1400px;
+      flex-direction: row-reverse;
+      margin: 15px;
+    }
+    img {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .about-text {
+      grid-column: 1;
+      grid-row: 2;
+      .future-text {
+        margin-right: 0.2rem;
+      }
+      .future-text,
+      .future-text ~ h2 {
+        display: inline-block;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+    }
+   
+  }
+}

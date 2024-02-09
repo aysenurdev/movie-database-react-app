@@ -101,12 +101,12 @@ const PageHome = () => {
       <HeroCard hero={heroMovies[0]} />
    
 
-<div>
+<div className='active-section'>
   <button onClick={() => setActiveSection('popular')} >Popular</button>
   <button onClick={() => setActiveSection('nowPlaying')} >Now Playing</button>
   <button onClick={() => setActiveSection('topRated')} >Top Rated</button>
   <button onClick={() => setActiveSection('upcoming')}>Upcoming</button>
-</div>
+
 
 
 
@@ -129,7 +129,7 @@ const PageHome = () => {
         <MoviesContainer title="Recommended Movies" moviesData={recommendedMovies} />
       )}
        
-
+       </div>
       
 
     </main>

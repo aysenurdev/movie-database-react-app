@@ -1,0 +1,238 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.hero-container {
+  width: 100vw;
+  height: 14rem;
+  // display: flex;
+  transform: translateX(-1rem);
+  position: relative;
+
+  img {
+    position: absolute;
+    width: auto;
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.986) 10%,
+      rgba(255, 255, 255, 0.007) 90%
+    );
+    height: 100%;
+  }
+}
+
+.hero-info-container {
+  width: 100%;
+  position: absolute;
+  top: 6rem;
+  left: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  .hero-title {
+    width: 100%;
+    font-size: 1.5rem;
+    grid-column: 1/4;
+    grid-row: 1;
+    margin: 0;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.719);
+  }
+  .hero-release-date {
+    padding: 0;
+    font-size: 0.8rem;
+    color: $font-color-primary;
+    font-family: CircularStdLight;
+    font-weight: 500;
+
+    opacity: 0.9;
+    grid-column: 1/4;
+    grid-row: 2;
+  }
+  .hero-overview {
+    display: none;
+    font-family: CircularStdMedium;
+    font-weight: 500;
+  }
+  .more-info-button {
+    background-color: #8da1b8; /* Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 7px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  
+  .more-info-button:hover {
+    background-color: #d3383f; /* Darker blue on hover */
+  }
+  .play-trailer {
+    background-color: #8f9193; /* Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 7px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+    
+
+  }
+  .play-trailer:hover{
+    background-color: #d3383f; /* Darker blue on hover */
+  }
+  .button-container {
+    grid-row: 3;
+    grid-column: 1;
+    display: flex;
+  }
+  
+
+  & * {
+    // this gives each child of the info container:
+    // margin reset, then margin down by an equal amount of rem
+    margin: 0;
+    margin-bottom: 0.3rem;
+  }
+}
+
+//=============================================================================================//
+//=================================MEDIA QUERIES===============================================//
+//=============================================================================================//
+
+@include mqMin(31.25rem) {
+  .hero-container {
+    height: 22rem;
+  }
+  .hero-info-container {
+    top: 9.5rem;
+
+    .hero-release-date {
+      padding: 0;
+      font-size: 1.25rem;
+      color: $font-color-primary;
+
+      opacity: 0.9;
+      grid-column: 1/4;
+      grid-row: 2;
+    }
+    .hero-overview {
+      display: block;
+      grid-row: 3;
+      grid-column: 1/4;
+      font-size: 1rem;
+      font-family: CircularStdMedium;
+      font-weight: 500;
+    }
+
+    .button-container {
+      grid-row: 4;
+      grid-column: 1;
+      display: flex;
+    }
+
+    & * {
+      // this gives each child of the info container:
+      // margin reset, then margin down by an equal amount of rem
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+@include mqMin(45rem) {
+  .hero-container {
+    height: 24rem;
+   margin-top: -90px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .hero-info-container {
+    top: 11.5rem;
+
+    .hero-title {
+      font-size: 2rem;
+    }
+    & * {
+      // this gives each child of the info container:
+      // margin reset, then margin down by an equal amount of rem
+      margin: 0;
+      margin-bottom: 0.9rem;
+    }
+  }
+}
+
+@include mqMin(59.375rem) {
+  .hero-container {
+    height: 28rem;
+  }
+
+  .hero-info-container {
+    top: 14rem;
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    & * {
+      // this gives each child of the info container:
+      // margin reset, then margin down by an equal amount of rem
+      margin: 0;
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+@include mqMin(66.25rem) {
+  .hero-container {
+    height: 33rem;
+  }
+
+  .hero-info-container {
+    top: 18rem;
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+}
+
+@include mqMin(81.25rem) {
+  .hero-container {
+    height: 43rem;
+  }
+
+  .hero-info-container {
+    top: 27rem;
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+}
+
+@include mqMin(93.75rem) {
+  .hero-container {
+    height: 53rem;
+  }
+
+  .hero-info-container {
+    top: 32rem;
+    .hero-title {
+      font-size: 5rem;
+    }
+    .hero-release-date {
+      font-size: 1.9rem;
+    }
+    .hero-overview {
+      font-size: 1.5rem;
+      grid-column: 1/3;
+    }
+  }
+}

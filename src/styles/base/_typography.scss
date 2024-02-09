@@ -1,0 +1,25 @@
+@use "../abstract/variables" as *;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: ui-monospace;
+  color: white;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+nav {
+  font-family: ui-monospace;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+body {
+    font-family: ui-monospace;
+}
+
+ 

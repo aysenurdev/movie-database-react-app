@@ -1,0 +1,77 @@
+@use "../abstract/variables" as *;
+
+.movies-container {
+   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  h2 {
+    transition: all 0.3s linear;
+    margin-top: 2rem;
+  }
+  &:hover {
+    h2 {
+      color: $primary-color;
+    }
+  }
+}
+
+
+.movies-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 165px);
+  grid-gap: 1rem;
+  // place the grid in the center of the page
+  margin-top: 1.5rem;
+}
+
+.centered-grid {
+  justify-content: center;
+}
+
+.slick-next {
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  opacity: 0.7;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  &:active {
+    transition: all 0.1s ease-in-out;
+    color: $font-color-secondary;
+    opacity: 1;
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+}
+
+.slick-prev {
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  opacity: 0.7;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  &:active {
+    transition: all 0.1s ease-in-out;
+    color: $font-color-secondary;
+    opacity: 1;
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+}

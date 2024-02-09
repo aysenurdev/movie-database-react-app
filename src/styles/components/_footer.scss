@@ -1,0 +1,46 @@
+@use "../abstract/variables" as *;
+
+footer {
+
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: $font-color-primary;
+    font-family: CircularStdMedium;
+    transition: 0.15s all ease-in-out;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  .copyright {
+    color: $font-color-primary;
+    display: flex;
+    font-family: CircularStdLight;
+    align-items: center;
+    p {
+      margin: 0;
+      margin-left: 0.2rem;
+    }
+  }
+  .socials {
+    display: flex;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+
+    .social-icon {
+      transition: all 0.2s ease-in-out;
+      margin: 0 0.3rem;
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.2);
+      }
+    }
+  }
+  & *:not(svg) {
+    margin-bottom: 0.5rem;
+  }
+}
