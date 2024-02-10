@@ -19,7 +19,7 @@
     color: white;
     padding: 10px;
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
   }
 
 
@@ -27,8 +27,6 @@
   &:hover {
     .movie-card-image {
       transform: scale(1.1);
-   
-     
     }
 
     .movie-details {
@@ -38,10 +36,8 @@
 
     }
 
-    .favorite-button {
-      opacity: 1;
+    .movie-details {
       cursor: pointer;
-      
-    }
+  }
   }
 }

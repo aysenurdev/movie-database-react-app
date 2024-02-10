@@ -1,52 +1,47 @@
-.single-movie-page {
-  padding: 20px;
-}
-
-.single-movie-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.single-movie-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-}
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
 
 .single-poster {
-  margin-bottom: 20px; /* Add margin at the bottom to separate from other content */
-}
-
-.single-poster img {
-  max-width: 200px;
-  height: auto;
-}
-
-.single-movie-info p {
-  margin-top: 20px;
-}
-
-.single-movie-videos {
-  margin-top: 20px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
 }
 
 .backside {
-  -webkit-filter: brightness(50%) blur(1px);
-  filter: brightness(50%) blur(1px);
-  
-  height: 200px;
+  height: 400px;
   object-fit: cover;
-  max-width: 100%;
+  width: 100%;
+}
+
+
+.poster-front {
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px 0 #7d0808;
+  left: 8%;
+  margin: 0.5rem;
+  position: absolute;
+  top: -50px;
+  z-index: 2;
+}
+
+.single-movie-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+}
+
+   
+@include mqMin(60em) {
+  .single-movie-info .single-movie-header {
+    width: 640px;
+    grid-column: 2/3;
+  }
   
-}
-.poster-front{
-box-shadow: 0 5px 15px rgba(0,0,0,.35);
-grid-column: 1/7;
-grid-row: 1;
-height: 200px;
-justify-self: center;
-object-fit: cover;
-z-index: 2;
-}
-/* Add more styles as needed */
+  }
+   
+@include mqMax(60em) {
+  .poster-front{
+    display: none;
+  }
+  }

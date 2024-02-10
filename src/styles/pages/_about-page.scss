@@ -1,7 +1,13 @@
 @use "../abstract/mixins" as *;
 @use "../abstract/variables" as *;
 
-main.about-page {
+
+.about-section {
+  display: flex;
+  justify-content: center;
+}
+
+.about-page {
   color: white;
   h2,
   h3 {

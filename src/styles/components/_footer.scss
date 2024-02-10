@@ -1,12 +1,13 @@
 @use "../abstract/variables" as *;
 
 footer {
-  position: relative;
   bottom: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 90px;
+  padding-bottom: 30px;
   a {
     text-decoration: none;
     color: $font-color-primary;
